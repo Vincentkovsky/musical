@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>991490939947-6so9ceb0vlddk728u9lt0bthlkpjtm1q.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.991490939947-6so9ceb0vlddk728u9lt0bthlkpjtm1q</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAa1MyVflit9Lu9bbArOAuMj_nyun6wqwQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>991490939947</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.codewithZixi.musica</string>
+	<key>PROJECT_ID</key>
+	<string>musicapp-e1a6a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>musicapp-e1a6a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:991490939947:ios:04226ac593531814075e6e</string>
+</dict>
+</plist>

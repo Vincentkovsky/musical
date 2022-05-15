@@ -1,6 +1,8 @@
 
 
 import SwiftUI
+import Firebase
+
 
 struct Album : Hashable {
     var id = UUID()
@@ -18,35 +20,8 @@ struct Song : Hashable {
 
 struct ContentView: View {
     
-    var albums = [Album(name : "Shallow", image: "crying",
-                        songs: [Song(name: "Shallow", time: "2:36"),
-                                Song(name: "Always Remember Us This Way", time: "2:36"),
-                                Song(name: "I'll Never Love Again", time: "2:36"),
-                                Song(name: "Heal Me", time: "2:36")]),
-                  
-                  Album(name : "Always Remember Us This Way", image: "dog",
-                                      songs: [Song(name: "Shallow", time: "2:36"),
-                                              Song(name: "Always Remember Us This Way", time: "2:36"),
-                                              Song(name: "I'll Never Love Again", time: "2:36"),
-                                              Song(name: "Heal Me", time: "2:36")                        ]),
-                  
-                  Album(name : "I'll Never Love Again", image: "guitar",
-                                      songs: [Song(name: "Shallow", time: "2:36"),
-                                      Song(name: "Always Remember Us This Way", time: "2:36"),
-                                      Song(name: "I'll Never Love Again", time: "2:36"),
-                                      Song(name: "Heal Me", time: "2:36")                ]),
-                  
-                  Album(name : "Heal Me", image: "kiss",
-                                      songs: [Song(name: "Shallow", time: "2:36"),
-                                              Song(name: "Always Remember Us This Way", time: "2:36"),
-                                              Song(name: "I'll Never Love Again", time: "2:36"),
-                                              Song(name: "Heal Me", time: "2:36")                        ]),
-                  Album(name : "Before I Cry", image: "shallow",
-                                      songs: [Song(name: "Shallow", time: "2:36"),
-                                              Song(name: "Always Remember Us This Way", time: "2:36"),
-                                              Song(name: "I'll Never Love Again", time: "2:36"),
-                                              Song(name: "Heal Me", time: "2:36")])]
-    
+    @ObservedObject var data : OurData
+     
     @State private var currentAlbum : Album?
     
     
@@ -58,7 +33,7 @@ struct ContentView: View {
             ScrollView {
                 ScrollView(.horizontal, showsIndicators: false, content : {
                     LazyHStack{
-                    ForEach(self.albums, id: \.self, content: {
+                        ForEach(self.data.albums, id: \.self, content: {
                         album in
                         AlbumArt(album: album, isWithText: true)
                             .onTapGesture {
@@ -68,7 +43,10 @@ struct ContentView: View {
                     }
                 })
                 LazyVStack{
-                    ForEach((self.currentAlbum?.songs ?? self.albums.first?.songs) ??
+                    if self.data.albums.first == nil {
+                        EmptyView()
+                    }else{
+                    ForEach((self.currentAlbum?.songs ?? self.data.albums.first?.songs) ??
                         [Song(name: "Shallow", time: "2:36"),
                                 Song(name: "Always Remember Us This Way", time: "2:36"),
                                 Song(name: "I'll Never Love Again", time: "2:36"),
@@ -77,11 +55,11 @@ struct ContentView: View {
                             id: \.self,
                             content:{
                             song in
-                                SongCell(album: currentAlbum ?? albums.first!, song : song)
+                        SongCell(album: currentAlbum ?? self.data.albums.first!, song : song)
                                
                                 
                             })
-            
+                    }
         }
             
             }.navigationTitle("My Playlist")
@@ -130,8 +108,3 @@ struct  SongCell : View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,8 +13,9 @@
 		0B2B891626AD549A00953C38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B2B891526AD549A00953C38 /* Preview Assets.xcassets */; };
 		0B2B892626AD71B700953C38 /* BlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B892526AD71B700953C38 /* BlurEffect.swift */; };
 		0B2B892826AE919800953C38 /* Playerview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B892726AE919800953C38 /* Playerview.swift */; };
-		0B87A8D626B3F7FC00935BDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B87A8D526B3F7FC00935BDA /* GoogleService-Info.plist */; };
 		1A26EA6C7517A99287D26C4F /* Pods_musica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416233447226AAB0E6785662 /* Pods_musica.framework */; };
+		5E8B49F72830C990004D3824 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B49F62830C990004D3824 /* Data.swift */; };
+		5E8B49FB2830CD00004D3824 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E8B49FA2830CD00004D3824 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,9 +27,10 @@
 		0B2B891726AD549A00953C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B2B892526AD71B700953C38 /* BlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffect.swift; sourceTree = "<group>"; };
 		0B2B892726AE919800953C38 /* Playerview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playerview.swift; sourceTree = "<group>"; };
-		0B87A8D526B3F7FC00935BDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		308D29684B8BFB8F67F3A5FA /* Pods-musica.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-musica.release.xcconfig"; path = "Target Support Files/Pods-musica/Pods-musica.release.xcconfig"; sourceTree = "<group>"; };
 		416233447226AAB0E6785662 /* Pods_musica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_musica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E8B49F62830C990004D3824 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		5E8B49FA2830CD00004D3824 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CBD5D7A5A23C20F2E7FD956D /* Pods-musica.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-musica.debug.xcconfig"; path = "Target Support Files/Pods-musica/Pods-musica.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,8 +67,9 @@
 		0B2B890D26AD549900953C38 /* musica */ = {
 			isa = PBXGroup;
 			children = (
-				0B87A8D526B3F7FC00935BDA /* GoogleService-Info.plist */,
 				0B2B890E26AD549900953C38 /* musicaApp.swift */,
+				5E8B49F62830C990004D3824 /* Data.swift */,
+				5E8B49FA2830CD00004D3824 /* GoogleService-Info.plist */,
 				0B2B891026AD549900953C38 /* ContentView.swift */,
 				0B2B892726AE919800953C38 /* Playerview.swift */,
 				0B2B892526AD71B700953C38 /* BlurEffect.swift */,
@@ -91,7 +94,6 @@
 				CBD5D7A5A23C20F2E7FD956D /* Pods-musica.debug.xcconfig */,
 				308D29684B8BFB8F67F3A5FA /* Pods-musica.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -164,7 +166,7 @@
 			files = (
 				0B2B891626AD549A00953C38 /* Preview Assets.xcassets in Resources */,
 				0B2B891326AD549A00953C38 /* Assets.xcassets in Resources */,
-				0B87A8D626B3F7FC00935BDA /* GoogleService-Info.plist in Resources */,
+				5E8B49FB2830CD00004D3824 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B2B892626AD71B700953C38 /* BlurEffect.swift in Sources */,
+				5E8B49F72830C990004D3824 /* Data.swift in Sources */,
 				0B2B891126AD549900953C38 /* ContentView.swift in Sources */,
 				0B2B890F26AD549900953C38 /* musicaApp.swift in Sources */,
 				0B2B892826AE919800953C38 /* Playerview.swift in Sources */,

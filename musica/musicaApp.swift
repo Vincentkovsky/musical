@@ -1,3 +1,4 @@
+// app icon from https://www.stickpng.com/img/download/5a5a753614d8c4188e0b08c1
 
 
 import SwiftUI

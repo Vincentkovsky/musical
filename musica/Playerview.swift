@@ -2,10 +2,12 @@
 
 import Foundation
 import SwiftUI
-
+import Firebase
+import AVFoundation
 struct PlayerView : View {
-    var album : Album
-    var song : Song
+    @State var album : Album
+    @State var song : Song
+    @State var player = AVPlayer()
     
     @State var isPlaying : Bool = false
     
@@ -46,15 +48,66 @@ struct PlayerView : View {
                     .edgesIgnoringSafeArea(.bottom).frame( height: 200, alignment: .center)
 }
 }
-}
+        }.onAppear(){
+            self.plays()
+        }
     }
+    
+    
     func playPause(){
-        self.isPlaying.toggle()}
+        self.isPlaying.toggle()
+        if isPlaying == false {
+            player.pause()
+        }else{
+            player.play()
+        }
+    }
 
-func next(){}
+func next(){
+    if let currentIndex = album.songs.firstIndex(of: song){
+        if currentIndex == album.songs.count - 1{
+            player.pause()
+            song = album.songs[0]
+            self.plays()
+        }else{
+            player.pause()
+            song = album.songs[currentIndex + 1]
+            self.plays()
 
-func previous(){}
+        }
+    }
+}
 
-
-
+func previous(){
+    if let currentIndex = album.songs.firstIndex(of: song){
+        if currentIndex == 0{
+            player.pause()
+            song = album.songs[album.songs.count - 1 ]
+            self.plays()
+        }else{
+            player.pause()
+            song = album.songs[currentIndex - 1]
+            self.plays()
+        }
+    }
+}
+    
+    func plays(){
+        let storage = Storage.storage().reference(forURL: self.song.file)
+        storage.downloadURL{(url, error) in
+            if error != nil{
+                print(error)
+            }else{
+                do{
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+                }
+                catch{
+                    
+                }
+                print(url?.absoluteString)
+                player = AVPlayer(playerItem: AVPlayerItem(url: url!))
+                player.play()
+            }
+        }
+    }
 }

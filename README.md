@@ -1,5 +1,6 @@
 # musical
 Access at: https://github.com/Vincentkovsky/musical
+Video demo at: https://youtu.be/tK-a0Acmnyw
 
 | Name         | StudentID | UTS Email                   | Contribution                                                                |
 |--------------|-----------|-----------------------------|-----------------------------------------------------------------------------|
